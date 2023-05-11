@@ -3,6 +3,9 @@ package org.example;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Scanner;
 
 public class WeatherFileOrganizer {
@@ -14,7 +17,8 @@ public class WeatherFileOrganizer {
         FileOrganizer fileOrganizer = new FileOrganizer();
         WeatherDataFetcher weatherDataFetcher = new WeatherDataFetcher();
 
-
+        String pathInput;
+        String weatherInput;
         boolean running = true;
         while (running) {
             System.out.println("Hello Cool User!\nTime to sort some files!");
@@ -22,10 +26,17 @@ public class WeatherFileOrganizer {
             String userInput = scanner.nextLine();
             switch (userInput) {
                 case "1":
-                    System.out.println("Enter a PATH:");
-                    String pathInput = scanner.nextLine();
+                    while (true) {
+                        System.out.println("Enter a PATH:");
+                        pathInput = scanner.nextLine();
+                        Path path = Paths.get(pathInput);
+                        if (Files.exists(path)) {
+                            break;
+                        }
+                    }
                     System.out.println("Enter a LOCATION:");
-                    String weatherInput = scanner.nextLine();
+                    weatherInput = scanner.nextLine();
+
                     String fetchedWeatherData = weatherDataFetcher.fetchWeatherData(weatherInput);
                     System.out.println(fetchedWeatherData + " <----------------");
                     //runnning methods

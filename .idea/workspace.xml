@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e858d6a7-ef60-4ecb-8a7a-74e8cf656f43" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="e858d6a7-ef60-4ecb-8a7a-74e8cf656f43" name="Changes" comment="abit more user friendly">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/WeatherFileOrganizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/WeatherFileOrganizer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/WeatherFileOrganizerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/WeatherFileOrganizerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +44,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
     "WebServerToolWindowFactoryState": "false",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -88,8 +85,15 @@
       <workItem from="1683622482599" duration="1918000" />
       <workItem from="1683660970114" duration="2022000" />
       <workItem from="1683744165725" duration="6228000" />
-      <workItem from="1683826336821" duration="6799000" />
+      <workItem from="1683826336821" duration="8059000" />
     </task>
+    <task id="LOCAL−00001" summary="abit more user friendly">
+      <created>1683845305187</created>
+      <option name="number" value="LOCAL−00001" />
+      <option name="presentableId" value="LOCAL−00001" />
+      <updated>1683845305187</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -105,6 +109,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="abit more user friendly" />
+    <option name="LAST_COMMIT_MESSAGE" value="abit more user friendly" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
