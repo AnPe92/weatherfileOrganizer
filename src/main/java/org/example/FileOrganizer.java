@@ -106,7 +106,6 @@ public class FileOrganizer {
         int counter = 0;
         if (filePath.getParent().equals(targetLocation)) {
             System.out.println("NOTHING SOHUL CAHNGE");
-            //
         } else {
 
             while (true) {
