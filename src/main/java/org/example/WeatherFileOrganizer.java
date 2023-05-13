@@ -13,6 +13,7 @@ public class WeatherFileOrganizer {
     //Instanciating classes that will be used
 
     public static void main(String[] args) throws IOException {
+        System.out.println("Hello Cool User!\nTime to sort some files!");
         Scanner scanner = new Scanner(System.in);
         FileOrganizer fileOrganizer = new FileOrganizer();
         WeatherDataFetcher weatherDataFetcher = new WeatherDataFetcher();
@@ -21,7 +22,6 @@ public class WeatherFileOrganizer {
         String weatherInput;
         boolean running = true;
         while (running) {
-            System.out.println("Hello Cool User!\nTime to sort some files!");
             System.out.println("Choose what you want to do: \n1: sort files\n2: reset sorted files");
             String userInput = scanner.nextLine();
             switch (userInput) {
@@ -36,11 +36,9 @@ public class WeatherFileOrganizer {
                     }
                     System.out.println("Enter a LOCATION:");
                     weatherInput = scanner.nextLine();
-
                     String fetchedWeatherData = weatherDataFetcher.fetchWeatherData(weatherInput);
-                    System.out.println(fetchedWeatherData + " <----------------");
-                    //runnning methods
-                    fileOrganizer.moveFiles(pathInput, fetchedWeatherData);
+
+                    fileOrganizer.moveFiles(pathInput, fetchedWeatherData, weatherInput);
                     File directory = new File(pathInput);
                     Desktop.getDesktop().open(directory);
                     break;

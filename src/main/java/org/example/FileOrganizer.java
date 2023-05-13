@@ -45,19 +45,20 @@ public class FileOrganizer {
         return fileList;
     }
 
-    public void moveFiles(String sourceDirectoryPath, String weather) throws IOException {
+    public void moveFiles(String sourceDirectoryPath, String weather, String WeatherLocation) throws IOException {
         List<String> fileNames = getFileName(sourceDirectoryPath);
+        int folderCount = 0;
         for (String fileName : fileNames) {
             String fileExtension = getFileExtension(fileName);
             Path sourceFilePath = Paths.get(sourceDirectoryPath, fileName);
-            Path targetDirectoryPath = Paths.get(sourceDirectoryPath, weather + fileExtension);
+            Path targetDirectoryPath = Paths.get(sourceDirectoryPath, weather + "_" + fileExtension.substring(1));
             Path targetFilePath = targetDirectoryPath.resolve(fileName);
 
             // Create the target directory if it does not exist
             if (!Files.exists(targetDirectoryPath)) {
                 Files.createDirectory(targetDirectoryPath);
+                folderCount++;
             }
-
             // Handle file name conflicts
             String baseFileName = fileName.substring(0, fileName.lastIndexOf("."));
             int counter = 1;
@@ -69,6 +70,12 @@ public class FileOrganizer {
             // Move the file
             Files.move(sourceFilePath, targetFilePath);
         }
+        System.out.println(" --------------------- ");
+        System.out.println("Number of files moved: " + fileNames.size());
+        System.out.println("Number of subdirectories made: " + folderCount);
+        System.out.println("The weather is: " + weather + " in " + WeatherLocation);
+        System.out.println(" --------------------- ");
+
     }
 
     private String getFileExtension(String fileName) {
@@ -92,12 +99,8 @@ public class FileOrganizer {
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
-
-
         });
         deleteEmptyFolders(path);
-
-
     }
 
     public void moveFileWithNameChange(Path filePath, Path targetLocation) throws IOException {
@@ -105,7 +108,6 @@ public class FileOrganizer {
         Path checkTargetLocation = targetLocation.resolve(newName);
         int counter = 0;
         if (filePath.getParent().equals(targetLocation)) {
-            System.out.println("NOTHING SOHUL CAHNGE");
         } else {
 
             while (true) {
@@ -126,7 +128,6 @@ public class FileOrganizer {
         directories.forEach(directory ->
         {
             try {
-                System.out.println(" WE HERE");
                 checkIfEmpty(directory);
             } catch (IOException e) {
                 throw new RuntimeException(e);
@@ -136,7 +137,6 @@ public class FileOrganizer {
 
     public void checkIfEmpty(Path directory) throws IOException {
         int check = Files.walk(directory).collect(Collectors.toList()).size();
-        System.out.println(check + directory.toString());
         if (check <= 1)
             Files.delete(directory);
     }
