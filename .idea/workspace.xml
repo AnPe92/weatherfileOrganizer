@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e858d6a7-ef60-4ecb-8a7a-74e8cf656f43" name="Changes" comment="abit more user friendly2">
+    <list default="true" id="e858d6a7-ef60-4ecb-8a7a-74e8cf656f43" name="Changes" comment="reset working?">
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -87,7 +87,8 @@
       <workItem from="1683660970114" duration="2022000" />
       <workItem from="1683744165725" duration="6228000" />
       <workItem from="1683826336821" duration="8226000" />
-      <workItem from="1683883008434" duration="8022000" />
+      <workItem from="1683883008434" duration="9937000" />
+      <workItem from="1683972250416" duration="43000" />
     </task>
     <task id="LOCAL−00001" summary="abit more user friendly">
       <created>1683845305187</created>
@@ -101,7 +102,13 @@
       <option name="presentableId" value="LOCAL−00002" />
       <updated>1683846685178</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL−00003" summary="reset working?">
+      <created>1683934897426</created>
+      <option name="number" value="LOCAL−00003" />
+      <option name="presentableId" value="LOCAL−00003" />
+      <updated>1683934897426</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -121,7 +128,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="abit more user friendly" />
     <MESSAGE value="abit more user friendly2" />
-    <option name="LAST_COMMIT_MESSAGE" value="abit more user friendly2" />
+    <MESSAGE value="reset working?" />
+    <option name="LAST_COMMIT_MESSAGE" value="reset working?" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
