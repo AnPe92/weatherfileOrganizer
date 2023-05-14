@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e858d6a7-ef60-4ecb-8a7a-74e8cf656f43" name="Changes" comment="fixed with api, only caching left?">
+    <list default="true" id="e858d6a7-ef60-4ecb-8a7a-74e8cf656f43" name="Changes" comment="cached implemented, need to test it more">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/WeatherDataFetcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/WeatherDataFetcher.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -90,7 +89,7 @@
       <workItem from="1683883008434" duration="9937000" />
       <workItem from="1683972250416" duration="43000" />
       <workItem from="1684009381452" duration="4635000" />
-      <workItem from="1684098199944" duration="2962000" />
+      <workItem from="1684098199944" duration="3455000" />
     </task>
     <task id="LOCAL−00001" summary="abit more user friendly">
       <created>1683845305187</created>
@@ -122,7 +121,13 @@
       <option name="presentableId" value="LOCAL−00005" />
       <updated>1684022721969</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL−00006" summary="cached implemented, need to test it more">
+      <created>1684107125367</created>
+      <option name="number" value="LOCAL−00006" />
+      <option name="presentableId" value="LOCAL−00006" />
+      <updated>1684107125367</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -145,7 +150,8 @@
     <MESSAGE value="reset working?" />
     <MESSAGE value="working with given requirments" />
     <MESSAGE value="fixed with api, only caching left?" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed with api, only caching left?" />
+    <MESSAGE value="cached implemented, need to test it more" />
+    <option name="LAST_COMMIT_MESSAGE" value="cached implemented, need to test it more" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

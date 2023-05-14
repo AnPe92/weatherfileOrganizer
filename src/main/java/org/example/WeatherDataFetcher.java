@@ -21,9 +21,11 @@ public class WeatherDataFetcher {
 
         Map<String, String> locationAndDescription = new HashMap<>();
 
-        if (cachedData != null && cachedData.containsKey(location.toLowerCase()) && cachedData.get(location).timeStamp.isBefore(cachedData.get(location).timeStamp.plusSeconds(600))) {
+        if (cachedData != null && cachedData.containsKey(location.toLowerCase()) && cachedData.get(location).timeStamp.isAfter(Instant.now().minusSeconds(600))) {
             locationAndDescription.put("location", location);
             locationAndDescription.put("description", cachedData.get(location).description);
+            System.out.println("WAS IN CACHE");
+            System.out.println(cachedData.get(location).timeStamp + " TIME STAMP");
             return locationAndDescription;
         } else {
             HttpURLConnection connection = null;
