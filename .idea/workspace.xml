@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e858d6a7-ef60-4ecb-8a7a-74e8cf656f43" name="Changes" comment="reset working?">
+    <list default="true" id="e858d6a7-ef60-4ecb-8a7a-74e8cf656f43" name="Changes" comment="working with given requirments">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/FileOrganizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/FileOrganizer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/WeatherDataFetcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/WeatherDataFetcher.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/WeatherFileOrganizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/WeatherFileOrganizer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -89,7 +90,7 @@
       <workItem from="1683826336821" duration="8226000" />
       <workItem from="1683883008434" duration="9937000" />
       <workItem from="1683972250416" duration="43000" />
-      <workItem from="1684009381452" duration="1882000" />
+      <workItem from="1684009381452" duration="3752000" />
     </task>
     <task id="LOCAL−00001" summary="abit more user friendly">
       <created>1683845305187</created>
@@ -109,7 +110,13 @@
       <option name="presentableId" value="LOCAL−00003" />
       <updated>1683934897426</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL−00004" summary="working with given requirments">
+      <created>1684020612996</created>
+      <option name="number" value="LOCAL−00004" />
+      <option name="presentableId" value="LOCAL−00004" />
+      <updated>1684020612996</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -130,7 +137,8 @@
     <MESSAGE value="abit more user friendly" />
     <MESSAGE value="abit more user friendly2" />
     <MESSAGE value="reset working?" />
-    <option name="LAST_COMMIT_MESSAGE" value="reset working?" />
+    <MESSAGE value="working with given requirments" />
+    <option name="LAST_COMMIT_MESSAGE" value="working with given requirments" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

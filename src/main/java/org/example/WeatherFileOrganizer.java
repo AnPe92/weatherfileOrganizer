@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Map;
 import java.util.Scanner;
 
 public class WeatherFileOrganizer {
@@ -36,11 +37,12 @@ public class WeatherFileOrganizer {
                     }
                     System.out.println("Enter a LOCATION:");
                     weatherInput = scanner.nextLine();
-                    String fetchedWeatherData = weatherDataFetcher.fetchWeatherData(weatherInput);
-
-                    fileOrganizer.moveFiles(pathInput, fetchedWeatherData, weatherInput);
+                    Map<String, String> fetchedWeatherData = weatherDataFetcher.fetchWeatherData(weatherInput);
+                    String fileData = fileOrganizer.moveFiles(pathInput, fetchedWeatherData.get("description"));
                     File directory = new File(pathInput);
                     Desktop.getDesktop().open(directory);
+                    System.out.println("The weather in " + fetchedWeatherData.get("location") + " is: " + fetchedWeatherData.get("description"));
+                    System.out.println(fileData);
                     break;
                 case "2":
                     fileOrganizer.resetFiles();

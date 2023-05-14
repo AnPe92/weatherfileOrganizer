@@ -45,7 +45,7 @@ public class FileOrganizer {
         return fileList;
     }
 
-    public void moveFiles(String sourceDirectoryPath, String weather, String WeatherLocation) throws IOException {
+    public String moveFiles(String sourceDirectoryPath, String weather) throws IOException {
         List<String> fileNames = getFileName(sourceDirectoryPath);
         int folderCount = 0;
         for (String fileName : fileNames) {
@@ -70,11 +70,8 @@ public class FileOrganizer {
             // Move the file
             Files.move(sourceFilePath, targetFilePath);
         }
-        System.out.println(" --------------------- ");
-        System.out.println("Number of files moved: " + fileNames.size());
-        System.out.println("Number of subdirectories made: " + folderCount);
-        System.out.println("The weather is: " + weather + " in " + WeatherLocation);
-        System.out.println(" --------------------- ");
+
+        return ("Number of files moved: " + fileNames.size() + "\nNumber of subdirectories made: " + folderCount);
 
     }
 
