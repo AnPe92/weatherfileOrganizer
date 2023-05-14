@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e858d6a7-ef60-4ecb-8a7a-74e8cf656f43" name="Changes" comment="working with given requirments">
+    <list default="true" id="e858d6a7-ef60-4ecb-8a7a-74e8cf656f43" name="Changes" comment="fixed with api, only caching left?">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/FileOrganizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/FileOrganizer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/WeatherDataFetcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/WeatherDataFetcher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/WeatherFileOrganizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/WeatherFileOrganizer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +89,8 @@
       <workItem from="1683826336821" duration="8226000" />
       <workItem from="1683883008434" duration="9937000" />
       <workItem from="1683972250416" duration="43000" />
-      <workItem from="1684009381452" duration="3752000" />
+      <workItem from="1684009381452" duration="4635000" />
+      <workItem from="1684098199944" duration="2962000" />
     </task>
     <task id="LOCAL−00001" summary="abit more user friendly">
       <created>1683845305187</created>
@@ -116,7 +116,13 @@
       <option name="presentableId" value="LOCAL−00004" />
       <updated>1684020612996</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL−00005" summary="fixed with api, only caching left?">
+      <created>1684022721969</created>
+      <option name="number" value="LOCAL−00005" />
+      <option name="presentableId" value="LOCAL−00005" />
+      <updated>1684022721969</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -138,7 +144,8 @@
     <MESSAGE value="abit more user friendly2" />
     <MESSAGE value="reset working?" />
     <MESSAGE value="working with given requirments" />
-    <option name="LAST_COMMIT_MESSAGE" value="working with given requirments" />
+    <MESSAGE value="fixed with api, only caching left?" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed with api, only caching left?" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
