@@ -66,7 +66,6 @@ public class FileOrganizer {
                 targetFilePath = targetDirectoryPath.resolve(baseFileName + "(" + counter + ")" + fileExtension);
                 counter++;
             }
-
             // Move the file
             Files.move(sourceFilePath, targetFilePath);
         }
@@ -104,9 +103,7 @@ public class FileOrganizer {
         String newName = filePath.getFileName().toString();
         Path checkTargetLocation = targetLocation.resolve(newName);
         int counter = 0;
-        if (filePath.getParent().equals(targetLocation)) {
-        } else {
-
+        if (!filePath.getParent().equals(targetLocation)) {
             while (true) {
                 if (Files.exists(checkTargetLocation)) {
                     counter++;
@@ -121,57 +118,29 @@ public class FileOrganizer {
     }
 
     public void deleteEmptyFolders(Path filePath) throws IOException {
-        List<Path> directories = Files.walk(filePath).filter(Files::isDirectory).collect(Collectors.toList());
-        directories.forEach(directory ->
-        {
+        List<Path> directories;
+
+        try (Stream<Path> directoryPath = Files.walk(filePath).filter(Files::isDirectory)) {
+            directories = directoryPath.collect(Collectors.toList());
+
+        }
+        for (Path directory : directories) {
             try {
                 checkIfEmpty(directory);
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
-        });
+        }
     }
 
     public void checkIfEmpty(Path directory) throws IOException {
-        int check = Files.walk(directory).collect(Collectors.toList()).size();
-        if (check <= 1)
-            Files.delete(directory);
+        long check;
+        try (Stream<Path> files = Files.walk(directory)) {
+            check = files.count();
+            if (check <= 1)
+                Files.delete(directory);
+        }
+
     }
 }
 
-//        String userInput;
-//        Path path;
-//        while (true) {
-//            System.out.println("Enter the path for folder to reset: ");
-//            userInput = scanner.nextLine();
-//            Path inputPath = Paths.get(userInput);
-//
-//            if (Files.exists(inputPath)) {
-//                path = inputPath;
-//                break;
-//            } else {
-//                System.out.println("Invalid path. Please try again.");
-//            }
-//        }
-//        try (Stream<Path> paths = Files.walk(path)) {
-//            paths.filter(Files::isRegularFile).forEach(file -> {
-//                try {
-//                    Files.move(file, path.resolve(file.getFileName()), StandardCopyOption.REPLACE_EXISTING);
-//                } catch (IOException e) {
-//                    throw new UncheckedIOException(e);
-//                }
-//            });
-//        }
-//        try (Stream<Path> paths = Files.walk(path)) {
-//            paths.filter(Files::isDirectory)
-//                    .sorted(Comparator.reverseOrder())
-//                    .forEach(dir -> {
-//                        try {
-//                            if (!dir.equals(path)) { // don't delete the original directory
-//                                Files.delete(dir);
-//                            }
-//                        } catch (IOException e) {
-//                            throw new UncheckedIOException(e);
-//                        }
-//                    });
-//        }
