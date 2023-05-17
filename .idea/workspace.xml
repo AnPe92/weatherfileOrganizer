@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e858d6a7-ef60-4ecb-8a7a-74e8cf656f43" name="Changes" comment="som sonarlint fixes">
+    <list default="true" id="e858d6a7-ef60-4ecb-8a7a-74e8cf656f43" name="Changes" comment="sonarlint and comments">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/FileOrganizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/FileOrganizer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/WeatherDataFetcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/WeatherDataFetcher.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +92,7 @@
       <workItem from="1684098199944" duration="4073000" />
       <workItem from="1684140170241" duration="611000" />
       <workItem from="1684190711710" duration="387000" />
-      <workItem from="1684276255827" duration="3383000" />
+      <workItem from="1684276255827" duration="4463000" />
     </task>
     <task id="LOCAL−00001" summary="abit more user friendly">
       <created>1683845305187</created>
@@ -143,7 +142,13 @@
       <option name="presentableId" value="LOCAL−00008" />
       <updated>1684278844438</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL−00009" summary="sonarlint and comments">
+      <created>1684280778370</created>
+      <option name="number" value="LOCAL−00009" />
+      <option name="presentableId" value="LOCAL−00009" />
+      <updated>1684280778370</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -168,7 +173,8 @@
     <MESSAGE value="fixed with api, only caching left?" />
     <MESSAGE value="cached implemented, need to test it more" />
     <MESSAGE value="som sonarlint fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="som sonarlint fixes" />
+    <MESSAGE value="sonarlint and comments" />
+    <option name="LAST_COMMIT_MESSAGE" value="sonarlint and comments" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

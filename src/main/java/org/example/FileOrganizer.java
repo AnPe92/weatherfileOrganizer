@@ -105,20 +105,27 @@ public class FileOrganizer {
 
     //moves a file and name changes it if needed.
     public void moveFileWithNameChange(Path filePath, Path targetLocation) throws IOException {
-        String newName = filePath.getFileName().toString();
+        String originalName = filePath.getFileName().toString();
+        String baseName = originalName;
+        String extension = "";
+        int dotIndex = originalName.lastIndexOf(".");
+        //get name of file and extension
+        if (dotIndex > 0) {
+            extension = originalName.substring(dotIndex);
+            baseName = originalName.substring(0, dotIndex);
+        }
+        String newName = baseName + extension;
+        //get path for file
         Path checkTargetLocation = targetLocation.resolve(newName);
         int counter = 0;
+        //if path already taken loop until a number inside () thats not taken
         if (!filePath.getParent().equals(targetLocation)) {
-            while (true) {
-                if (Files.exists(checkTargetLocation)) {
-                    counter++;
-                    newName = " COPY " + counter + filePath.getFileName();
-                    checkTargetLocation = targetLocation.resolve(newName);
-                } else {
-                    Files.move(filePath, targetLocation.resolve(newName));
-                    break;
-                }
+            while (Files.exists(checkTargetLocation)) {
+                counter++;
+                newName = baseName + "(" + counter + ")" + extension;
+                checkTargetLocation = targetLocation.resolve(newName);
             }
+            Files.move(filePath, targetLocation.resolve(newName));
         }
     }
 
@@ -126,13 +133,16 @@ public class FileOrganizer {
     public void deleteEmptyFolders(Path filePath) throws IOException {
         List<Path> directories;
 
+        // get all sudfolders at a path
         try (Stream<Path> directoryPath = Files.walk(filePath).filter(Files::isDirectory)) {
             directories = directoryPath.collect(Collectors.toList());
-
         }
+        //loop over each folder and check if its empty then delete it if empty
         for (Path directory : directories) {
             try {
-                checkIfEmpty(directory);
+                if (checkIfEmpty(directory)) {
+                    Files.delete(directory);
+                }
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
@@ -140,12 +150,11 @@ public class FileOrganizer {
     }
 
     //Method checks if folder is empty
-    public void checkIfEmpty(Path directory) throws IOException {
+    public boolean checkIfEmpty(Path directory) throws IOException {
         long check;
         try (Stream<Path> files = Files.walk(directory)) {
             check = files.count();
-            if (check <= 1)
-                Files.delete(directory);
+            return check <= 1;
         }
     }
 }
