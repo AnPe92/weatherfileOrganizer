@@ -76,7 +76,7 @@ public class FileOrganizer {
     }
 
     //Method for getting file type.
-    private String getFileExtension(String fileName) {
+    public String getFileExtension(String fileName) {
         int dotIndex = fileName.lastIndexOf(".");
         return (dotIndex == -1) ? "" : fileName.substring(dotIndex);
     }
