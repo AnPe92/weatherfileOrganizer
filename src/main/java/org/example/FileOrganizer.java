@@ -84,12 +84,10 @@ public class FileOrganizer {
 
     //Method for getting all files in subdirectores at a given path and moving them out to the given path and deleting subdirectories
     //Just for ease of testing
-    public void resetFiles() throws IOException {
+    public void resetFiles(String pathToReset) throws IOException {
 
-        System.out.println("Enter a path to reset folder: ");
-        String userInput = scanner.nextLine();
 
-        Path path = Paths.get(userInput);
+        Path path = Paths.get(pathToReset);
 
         try (Stream<Path> folders = Files.walk(path)) {
             folders.filter(Files::isRegularFile).forEach(file -> {

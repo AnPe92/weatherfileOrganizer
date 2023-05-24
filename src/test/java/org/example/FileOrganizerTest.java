@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -119,5 +120,48 @@ class FileOrganizerTest {
         assertEquals(".txt", fileOrganizer.getFileExtension(txt));
         assertEquals(".pdf", fileOrganizer.getFileExtension(pdf));
         assertEquals(".ap", fileOrganizer.getFileExtension(test));
+    }
+
+    @Test
+    void resetFilesTest() throws IOException {
+        FileOrganizer fileOrganizer = new FileOrganizer();
+
+        //creates a subfolder and adds files to it
+        Path subFolder = Files.createDirectory(tempDirectory.resolve("testFolder"));
+        Path subFolderTwo = Files.createDirectory(tempDirectory.resolve("testFolder2"));
+        Files.createFile(subFolder.resolve("test.txt"));
+        Files.createFile(subFolder.resolve("test.pdf"));
+        Files.createFile(subFolder.resolve("test.docx"));
+        Files.createFile(subFolderTwo.resolve("test2.txt"));
+        Files.createFile(subFolderTwo.resolve("test2.pdf"));
+        Files.createFile(subFolderTwo.resolve("test2.docx"));
+
+        List<Path> directories = new ArrayList<>();
+        try (Stream<Path> folders = Files.walk(tempDirectory)) {
+            folders.filter(Files::isDirectory)
+                    .forEach(directories::add);
+        }
+
+        //Make sure the folders get added to begin with
+        assertEquals(2, directories.size() - 1);
+
+        fileOrganizer.resetFiles(tempDirectory.toString());
+
+        //reset list and get all folders after method is ran
+        directories = new ArrayList<>();
+        try (Stream<Path> folders = Files.walk(tempDirectory)) {
+            folders.filter(Files::isDirectory)
+                    .forEach(directories::add);
+        }
+
+        //make sure that folders is deleted but not the files
+        assertEquals(0, directories.size() - 1);
+        assertTrue(Files.exists(tempDirectory.resolve("test.txt")));
+        assertTrue(Files.exists(tempDirectory.resolve("test.pdf")));
+        assertTrue(Files.exists(tempDirectory.resolve("test.docx")));
+        assertTrue(Files.exists(tempDirectory.resolve("test2.txt")));
+        assertTrue(Files.exists(tempDirectory.resolve("test2.pdf")));
+        assertTrue(Files.exists(tempDirectory.resolve("test2.docx")));
+
     }
 }

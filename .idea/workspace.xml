@@ -5,11 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e858d6a7-ef60-4ecb-8a7a-74e8cf656f43" name="Changes" comment="Some tests added for FileOrganizer">
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/FileOrganizerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/FileOrganizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/FileOrganizer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/WeatherFileOrganizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/WeatherFileOrganizer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/FileOrganizerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/FileOrganizerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,6 +130,7 @@
       <workItem from="1684276255827" duration="5272000" />
       <workItem from="1684521416227" duration="161000" />
       <workItem from="1684859570357" duration="6989000" />
+      <workItem from="1684920692061" duration="2334000" />
     </task>
     <task id="LOCAL−00001" summary="abit more user friendly">
       <created>1683845305187</created>
