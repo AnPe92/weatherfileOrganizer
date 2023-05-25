@@ -4,6 +4,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -20,18 +21,16 @@ class FileOrganizerTest {
     private Path tempDirectory;
 
     @BeforeEach
-    public void setUpFiles() throws IOException {
-        tempDirectory = Files.createTempDirectory("test");
+    void setUp() throws IOException {
+        tempDirectory = Files.createTempDirectory("tempDirectory");
     }
 
     @AfterEach
-    public void cleanUpFiles() throws IOException {
-        try (Stream<Path> folders = Files.walk(tempDirectory)) {
-            folders
-                    .sorted(Comparator.reverseOrder())
-                    .map(Path::toFile)
-                    .forEach(java.io.File::delete);
-        }
+    void tearDown() throws IOException {
+        Files.walk(tempDirectory)
+                .sorted(Comparator.reverseOrder())
+                .map(Path::toFile)
+                .forEach(File::delete);
     }
 
     @Test
@@ -162,6 +161,57 @@ class FileOrganizerTest {
         assertTrue(Files.exists(tempDirectory.resolve("test2.txt")));
         assertTrue(Files.exists(tempDirectory.resolve("test2.pdf")));
         assertTrue(Files.exists(tempDirectory.resolve("test2.docx")));
+    }
+
+
+    @Test
+    void moveFileWithNameChangeTest() throws IOException {
+        Path subFolder = Files.createDirectory(tempDirectory.resolve("subFolder"));
+        FileOrganizer fileOrganizer = new FileOrganizer();
+
+        Files.createFile(tempDirectory.resolve("file.txt"));
+        Path fileToMove = Files.createFile(subFolder.resolve("file.txt"));
+
+        fileOrganizer.moveFileWithNameChange(fileToMove, tempDirectory);
+
+        //File should have been moved, therefore false
+        assertFalse(Files.exists(fileToMove));
+
+        //Renamed file in root, tempDirectory, from subFolder
+        assertTrue(Files.exists(tempDirectory.resolve("file(1).txt")));
+        //"Original" file should still exist in root folder
+        assertTrue(Files.exists(tempDirectory.resolve("file.txt")));
+    }
+
+    @Test
+    void deleteEmptyFoldersTest() throws IOException {
+        FileOrganizer fileOrganizer = new FileOrganizer();
+
+        Path emptyFolder = Files.createDirectory(tempDirectory.resolve("emptyFolder"));
+        Path fileFolder = Files.createDirectory(tempDirectory.resolve("filesFolder"));
+        Files.createFile(fileFolder.resolve("file.txt"));
+
+        fileOrganizer.deleteEmptyFolders(tempDirectory);
+
+        assertTrue(Files.exists(fileFolder));
+        assertFalse(Files.exists(emptyFolder));
 
     }
+
+    @Test
+    void checkIfEmptyTest() throws IOException {
+        FileOrganizer fileOrganizer = new FileOrganizer();
+
+        Path emptyFolder = Files.createDirectory(tempDirectory.resolve("emptyFolder"));
+        Path fileFolder = Files.createDirectory(tempDirectory.resolve("filesFolder"));
+        Files.createFile(fileFolder.resolve("file.txt"));
+
+        //Check not empty folder
+        assertFalse(fileOrganizer.checkIfEmpty(fileFolder));
+        assertFalse(fileOrganizer.checkIfEmpty(tempDirectory));
+
+        //Check empty folder
+        assertTrue(fileOrganizer.checkIfEmpty(emptyFolder));
+    }
 }
+
