@@ -1,20 +1,13 @@
 package org.example;
 
-import static org.junit.Assert.assertTrue;
-
 import org.junit.Test;
 
-/**
- * Unit test for simple App.
- */
-public class WeatherFileOrganizerTest
-{
-    /**
-     * Rigorous Test :-)
-     */
+import static org.junit.Assert.assertTrue;
+
+class WeatherFileOrganizerTest {
+
     @Test
-    public void shouldAnswerWithTrue()
-    {
-        assertTrue( true );
+    void shouldAnswerWithTrue() {
+        assertTrue(true);
     }
 }

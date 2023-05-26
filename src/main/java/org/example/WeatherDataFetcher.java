@@ -1,5 +1,6 @@
 package org.example;
 
+import lombok.NoArgsConstructor;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -7,17 +8,23 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
-import java.net.URL;
 import java.time.Instant;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
+
+@NoArgsConstructor
 public class WeatherDataFetcher {
     Scanner scanner = new Scanner(System.in);
     Map<String, CachedWeatherData> cachedData = new HashMap<>();
+    private HttpURLConnection connection;
 
-    public Map<String, String> fetchWeatherData(String location) throws IOException {
+    public WeatherDataFetcher(HttpURLConnection connection) {
+        this.connection = connection;
+    }
+
+    public Map<String, String> fetchWeatherData(String location, HttpURLConnection connection) throws IOException {
 
         Map<String, String> locationAndDescription = new HashMap<>();
 
@@ -27,15 +34,11 @@ public class WeatherDataFetcher {
             locationAndDescription.put("description", cachedData.get(location).description);
             return locationAndDescription;
         } else {
-            HttpURLConnection connection = null;
             boolean askAgain = true;
             while (askAgain) {
-                //Shouldnt save api key here
-                String apiKey = "&appid=3442d6235cbeda429fd19624f1a34b0f";
-                String url = "https://api.openweathermap.org/data/2.5/weather?q=";
+
                 //Setup URL for get call and then make a get call on that URL
-                URL api = new URL(url + location + apiKey);
-                connection = (HttpURLConnection) api.openConnection();
+
                 connection.setRequestMethod("GET");
                 //Get response from api
                 int resCode = connection.getResponseCode();
@@ -77,4 +80,6 @@ public class WeatherDataFetcher {
             }
         }
     }
+
+
 }

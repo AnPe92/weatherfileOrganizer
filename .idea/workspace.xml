@@ -4,9 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e858d6a7-ef60-4ecb-8a7a-74e8cf656f43" name="Changes" comment="reset folder test added, with refactored reset method">
+    <list default="true" id="e858d6a7-ef60-4ecb-8a7a-74e8cf656f43" name="Changes" comment="FileOrganizerTest complete">
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/FileOrganizerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/FileOrganizerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/WeatherDataFetcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/WeatherDataFetcher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/WeatherFileOrganizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/WeatherFileOrganizer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/WeatherFileOrganizerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/WeatherFileOrganizerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +57,20 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.prettier&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.FileOrganizerTest.checkIfEmptyTest">
+  <component name="RunManager" selected="JUnit.WeatherDataFetcherTest">
+    <configuration name="WeatherFileOrganizer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.WeatherFileOrganizer" />
+      <module name="weatherfile" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="FileOrganizerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="weatherfile" />
       <extension name="coverage">
@@ -84,7 +102,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FileOrganizerTest.countFilesInDirectoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="WeatherDataFetcherTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="weatherfile" />
       <extension name="coverage">
         <pattern>
@@ -93,14 +111,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.example" />
-      <option name="MAIN_CLASS_NAME" value="org.example.FileOrganizerTest" />
-      <option name="METHOD_NAME" value="countFilesInDirectoryTest" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="org.example.WeatherDataFetcherTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FileOrganizerTest.deleteEmptyFoldersTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="WeatherDataFetcherTest.fetchWeatherDataTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="weatherfile" />
       <extension name="coverage">
         <pattern>
@@ -109,24 +126,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.example" />
-      <option name="MAIN_CLASS_NAME" value="org.example.FileOrganizerTest" />
-      <option name="METHOD_NAME" value="deleteEmptyFoldersTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FileOrganizerTest.moveFileWithNameChangeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="weatherfile" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.example" />
-      <option name="MAIN_CLASS_NAME" value="org.example.FileOrganizerTest" />
-      <option name="METHOD_NAME" value="moveFileWithNameChangeTest" />
+      <option name="MAIN_CLASS_NAME" value="org.example.WeatherDataFetcherTest" />
+      <option name="METHOD_NAME" value="fetchWeatherDataTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -134,11 +135,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.FileOrganizerTest.checkIfEmptyTest" />
-        <item itemvalue="JUnit.FileOrganizerTest.deleteEmptyFoldersTest" />
+        <item itemvalue="JUnit.WeatherDataFetcherTest" />
+        <item itemvalue="JUnit.WeatherDataFetcherTest.fetchWeatherDataTest" />
+        <item itemvalue="Application.WeatherFileOrganizer" />
         <item itemvalue="JUnit.FileOrganizerTest" />
-        <item itemvalue="JUnit.FileOrganizerTest.moveFileWithNameChangeTest" />
-        <item itemvalue="JUnit.FileOrganizerTest.countFilesInDirectoryTest" />
+        <item itemvalue="JUnit.FileOrganizerTest.checkIfEmptyTest" />
       </list>
     </recent_temporary>
   </component>
@@ -166,7 +167,8 @@
       <workItem from="1684521416227" duration="161000" />
       <workItem from="1684859570357" duration="6989000" />
       <workItem from="1684920692061" duration="13053000" />
-      <workItem from="1685016762322" duration="1392000" />
+      <workItem from="1685016762322" duration="5418000" />
+      <workItem from="1685091415388" duration="4495000" />
     </task>
     <task id="LOCAL−00001" summary="abit more user friendly">
       <created>1683845305187</created>
@@ -234,7 +236,13 @@
       <option name="presentableId" value="LOCAL−00011" />
       <updated>1684924568525</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL−00012" summary="FileOrganizerTest complete">
+      <created>1685019694429</created>
+      <option name="number" value="LOCAL−00012" />
+      <option name="presentableId" value="LOCAL−00012" />
+      <updated>1685019694429</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -263,7 +271,8 @@
     <MESSAGE value="More comments and small changes" />
     <MESSAGE value="Some tests added for FileOrganizer" />
     <MESSAGE value="reset folder test added, with refactored reset method" />
-    <option name="LAST_COMMIT_MESSAGE" value="reset folder test added, with refactored reset method" />
+    <MESSAGE value="FileOrganizerTest complete" />
+    <option name="LAST_COMMIT_MESSAGE" value="FileOrganizerTest complete" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

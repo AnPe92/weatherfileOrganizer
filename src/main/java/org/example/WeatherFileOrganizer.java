@@ -18,6 +18,7 @@ public class WeatherFileOrganizer {
         Scanner scanner = new Scanner(System.in);
         FileOrganizer fileOrganizer = new FileOrganizer();
         WeatherDataFetcher weatherDataFetcher = new WeatherDataFetcher();
+        CreateConnection connection = new CreateConnection();
 
         String pathInput;
         String weatherInput;
@@ -37,7 +38,7 @@ public class WeatherFileOrganizer {
                     }
                     System.out.println("Enter a LOCATION:");
                     weatherInput = scanner.nextLine();
-                    Map<String, String> fetchedWeatherData = weatherDataFetcher.fetchWeatherData(weatherInput);
+                    Map<String, String> fetchedWeatherData = weatherDataFetcher.fetchWeatherData(weatherInput, connection.createConnection(weatherInput));
                     String fileData = fileOrganizer.moveFiles(pathInput, fetchedWeatherData.get("description"));
                     File directory = new File(pathInput);
                     Desktop.getDesktop().open(directory);
