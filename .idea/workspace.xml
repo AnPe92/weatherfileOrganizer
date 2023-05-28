@@ -4,14 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e858d6a7-ef60-4ecb-8a7a-74e8cf656f43" name="Changes" comment="FileOrganizerTest complete">
+    <list default="true" id="e858d6a7-ef60-4ecb-8a7a-74e8cf656f43" name="Changes" comment="Adding test and connectionmaker">
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CachedWeatherData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CachedWeatherData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CreateConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CreateConnection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/WeatherDataFetcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/WeatherDataFetcher.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/WeatherFileOrganizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/WeatherFileOrganizer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/WeatherFileOrganizerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/WeatherFileOrganizerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/WeatherDataFetcherTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/WeatherDataFetcherTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +58,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.prettier&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.WeatherDataFetcherTest">
+  <component name="RunManager" selected="Application.WeatherFileOrganizer">
     <configuration name="WeatherFileOrganizer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.WeatherFileOrganizer" />
       <module name="weatherfile" />
@@ -135,9 +136,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.WeatherFileOrganizer" />
         <item itemvalue="JUnit.WeatherDataFetcherTest" />
         <item itemvalue="JUnit.WeatherDataFetcherTest.fetchWeatherDataTest" />
-        <item itemvalue="Application.WeatherFileOrganizer" />
         <item itemvalue="JUnit.FileOrganizerTest" />
         <item itemvalue="JUnit.FileOrganizerTest.checkIfEmptyTest" />
       </list>
@@ -168,7 +169,9 @@
       <workItem from="1684859570357" duration="6989000" />
       <workItem from="1684920692061" duration="13053000" />
       <workItem from="1685016762322" duration="5418000" />
-      <workItem from="1685091415388" duration="4495000" />
+      <workItem from="1685091415388" duration="8586000" />
+      <workItem from="1685143168001" duration="2857000" />
+      <workItem from="1685286904449" duration="4998000" />
     </task>
     <task id="LOCAL−00001" summary="abit more user friendly">
       <created>1683845305187</created>
@@ -242,7 +245,19 @@
       <option name="presentableId" value="LOCAL−00012" />
       <updated>1685019694429</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL−00013" summary="refactor WeatherDataFetcher and testing">
+      <created>1685104701811</created>
+      <option name="number" value="LOCAL−00013" />
+      <option name="presentableId" value="LOCAL−00013" />
+      <updated>1685104701811</updated>
+    </task>
+    <task id="LOCAL−00014" summary="Adding test and connectionmaker">
+      <created>1685104733384</created>
+      <option name="number" value="LOCAL−00014" />
+      <option name="presentableId" value="LOCAL−00014" />
+      <updated>1685104733384</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -272,7 +287,9 @@
     <MESSAGE value="Some tests added for FileOrganizer" />
     <MESSAGE value="reset folder test added, with refactored reset method" />
     <MESSAGE value="FileOrganizerTest complete" />
-    <option name="LAST_COMMIT_MESSAGE" value="FileOrganizerTest complete" />
+    <MESSAGE value="refactor WeatherDataFetcher and testing" />
+    <MESSAGE value="Adding test and connectionmaker" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding test and connectionmaker" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

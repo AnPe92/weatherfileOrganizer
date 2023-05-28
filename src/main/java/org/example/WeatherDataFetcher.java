@@ -1,6 +1,6 @@
 package org.example;
 
-import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -9,77 +9,62 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.time.Instant;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.Optional;
 
 
-@NoArgsConstructor
+@RequiredArgsConstructor
 public class WeatherDataFetcher {
-    Scanner scanner = new Scanner(System.in);
-    Map<String, CachedWeatherData> cachedData = new HashMap<>();
-    private HttpURLConnection connection;
+    private final CachedWeatherData cachedData;
+    private final HttpURLConnection connection;
 
-    public WeatherDataFetcher(HttpURLConnection connection) {
-        this.connection = connection;
+    public Optional<WeatherData> fetchWeatherData(String location) {
+
+        try {
+            WeatherData weatherData = fetchData(location);
+
+            if (weatherData.getTime().isAfter(Instant.now().minusSeconds(600))) {
+                return Optional.of(weatherData);
+            } else {
+                return Optional.of(fetchData(location));
+            }
+        } catch (IOException e) {
+            return Optional.empty();
+        }
     }
 
-    public Map<String, String> fetchWeatherData(String location, HttpURLConnection connection) throws IOException {
 
-        Map<String, String> locationAndDescription = new HashMap<>();
+    private WeatherData fetchData(String location) throws IOException {
+        try {
 
-        //Checks if location is in cache map and returns it if exists
-        if (cachedData != null && cachedData.containsKey(location.toLowerCase()) && cachedData.get(location).timeStamp.isAfter(Instant.now().minusSeconds(600))) {
-            locationAndDescription.put("location", location);
-            locationAndDescription.put("description", cachedData.get(location).description);
-            return locationAndDescription;
-        } else {
-            boolean askAgain = true;
-            while (askAgain) {
+            connection.setRequestMethod("GET");
 
-                //Setup URL for get call and then make a get call on that URL
+            int resCode = connection.getResponseCode();
 
-                connection.setRequestMethod("GET");
-                //Get response from api
-                int resCode = connection.getResponseCode();
-                String responseMessage = connection.getResponseMessage();
-                //if response is not 200 ok, ask user for a new location, should be more error handling for different responses
-                if (resCode != HttpURLConnection.HTTP_OK) {
-                    connection.disconnect();
-                    System.out.println("Something went wrong when trying to fetch: " + resCode);
-                    System.out.println("response message: " + location + " " + responseMessage + " please try again");
-                    location = scanner.nextLine();
-                } else {
-                    askAgain = false;
-                }
+            if (resCode != HttpURLConnection.HTTP_OK) {
+                connection.disconnect();
+                throw new IOException("Failed to fetch data: " + resCode);
             }
-            //Get the json response and makes string from the input stream
+
             try (BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()))) {
                 StringBuilder response = new StringBuilder();
                 String line;
                 while ((line = reader.readLine()) != null) {
                     response.append(line);
                 }
-                //convert string to a jsonobject, could look up implementing GSON library to get json object directly
-                JSONObject jsonResponse = new JSONObject(response.toString());
 
-                // Extract the weather description
+                JSONObject jsonResponse = new JSONObject(response.toString());
                 JSONArray weatherArray = jsonResponse.getJSONArray("weather");
                 JSONObject weatherObject = weatherArray.getJSONObject(0);
                 String weatherDescription = weatherObject.getString("main");
-                locationAndDescription.put("location", location);
-                locationAndDescription.put("description", weatherDescription);
 
-                //caches data for future use
-                if (cachedData != null && location != null && weatherDescription != null) {
-                    cachedData.put(location.toLowerCase(), new CachedWeatherData(Instant.now(), weatherDescription));
-                }
-                // Return the weather description
-                return locationAndDescription;
+                WeatherData weatherData = new WeatherData(location, weatherDescription, Instant.now());
 
+                cachedData.put(location.toLowerCase(), weatherData);
+
+                return weatherData;
             }
+        } finally {
+            connection.disconnect();
         }
     }
-
-
 }
