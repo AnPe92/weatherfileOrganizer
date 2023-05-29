@@ -56,9 +56,16 @@ public class WeatherFileOrganizer {
                     System.out.println(fileData);
                     break;
                 case "2":
-                    System.out.println("Enter a path to reset folder: ");
-                    pathInput = scanner.nextLine();
-                    fileOrganizer.resetFiles(pathInput);
+                    while (true) {
+                        System.out.println("Enter a path to reset folder: ");
+                        pathInput = scanner.nextLine();
+                        Path path = Paths.get(pathInput);
+                        if (Files.exists(path)) {
+                            fileOrganizer.resetFiles(pathInput);
+                            break;
+                        }
+                    }
+
                     break;
                 case "exit":
                     running = false;

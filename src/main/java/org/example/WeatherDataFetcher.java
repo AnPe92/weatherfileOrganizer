@@ -28,6 +28,7 @@ public class WeatherDataFetcher {
                 return Optional.of(fetchData(location));
             }
         } catch (IOException e) {
+            //returning optional so that application not just terminates
             return Optional.empty();
         }
     }
