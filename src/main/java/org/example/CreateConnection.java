@@ -10,10 +10,12 @@ import java.net.URL;
 public class CreateConnection {
     //Creating a connection to the api
     public HttpURLConnection createConnection(String location) throws IOException {
+        System.out.println("Entering createConnection()");
         String apiKey = "&appid=3442d6235cbeda429fd19624f1a34b0f";
-        String url = "https://api.openweathermap.org/data/2.5/weather?q=";
+        String url = "https://api.openweathermap.org/data/2.5/weather?q=" + location + apiKey;
 
-        URL connection = new URL(url + location + apiKey);
+        System.out.println(url);
+        URL connection = new URL(url);
         return (HttpURLConnection) connection.openConnection();
     }
 }

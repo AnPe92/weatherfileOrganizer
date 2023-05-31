@@ -3,7 +3,6 @@ package org.example;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
-import java.net.HttpURLConnection;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -44,8 +43,8 @@ public class WeatherFileOrganizer {
                     do {
                         System.out.println("Enter a LOCATION:");
                         weatherInput = scanner.nextLine();
-                        HttpURLConnection httpConnection = connection.createConnection(weatherInput);
-                        WeatherDataFetcher weatherDataFetcher = new WeatherDataFetcher(cachedData, httpConnection);
+                        CreateConnection createConnection = new CreateConnection();
+                        WeatherDataFetcher weatherDataFetcher = new WeatherDataFetcher(cachedData, createConnection);
                         fetchedWeatherData = weatherDataFetcher.fetchWeatherData(weatherInput);
                     } while (!fetchedWeatherData.isPresent());
 

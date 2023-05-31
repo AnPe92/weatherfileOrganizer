@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e858d6a7-ef60-4ecb-8a7a-74e8cf656f43" name="Changes" comment="refactored">
+    <list default="true" id="e858d6a7-ef60-4ecb-8a7a-74e8cf656f43" name="Changes" comment="added good and bad api response test">
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -57,7 +57,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.prettier&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.WeatherDataFetcherTest">
+  <component name="RunManager" selected="JUnit.WeatherDataFetcherTest.badResponseTest">
     <configuration name="WeatherFileOrganizer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.WeatherFileOrganizer" />
       <module name="weatherfile" />
@@ -67,21 +67,6 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FileOrganizerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="weatherfile" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.example" />
-      <option name="MAIN_CLASS_NAME" value="org.example.FileOrganizerTest" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -117,6 +102,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="WeatherDataFetcherTest.fetchCachedDataTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="weatherfile" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example" />
+      <option name="MAIN_CLASS_NAME" value="org.example.WeatherDataFetcherTest" />
+      <option name="METHOD_NAME" value="fetchCachedDataTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="WeatherDataFetcherTest.fetchWeatherDataTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="weatherfile" />
       <extension name="coverage">
@@ -135,11 +136,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.WeatherDataFetcherTest" />
         <item itemvalue="JUnit.WeatherDataFetcherTest.badResponseTest" />
-        <item itemvalue="Application.WeatherFileOrganizer" />
+        <item itemvalue="JUnit.WeatherDataFetcherTest" />
+        <item itemvalue="JUnit.WeatherDataFetcherTest.fetchCachedDataTest" />
         <item itemvalue="JUnit.WeatherDataFetcherTest.fetchWeatherDataTest" />
-        <item itemvalue="JUnit.FileOrganizerTest" />
+        <item itemvalue="Application.WeatherFileOrganizer" />
       </list>
     </recent_temporary>
   </component>
@@ -171,7 +172,8 @@
       <workItem from="1685091415388" duration="8586000" />
       <workItem from="1685143168001" duration="2857000" />
       <workItem from="1685286904449" duration="5115000" />
-      <workItem from="1685374562515" duration="3010000" />
+      <workItem from="1685374562515" duration="8903000" />
+      <workItem from="1685485956762" duration="4825000" />
     </task>
     <task id="LOCAL−00001" summary="abit more user friendly">
       <created>1683845305187</created>
@@ -263,7 +265,13 @@
       <option name="presentableId" value="LOCAL−00015" />
       <updated>1685316732332</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL−00016" summary="added good and bad api response test">
+      <created>1685400187552</created>
+      <option name="number" value="LOCAL−00016" />
+      <option name="presentableId" value="LOCAL−00016" />
+      <updated>1685400187552</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -296,7 +304,8 @@
     <MESSAGE value="refactor WeatherDataFetcher and testing" />
     <MESSAGE value="Adding test and connectionmaker" />
     <MESSAGE value="refactored" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactored" />
+    <MESSAGE value="added good and bad api response test" />
+    <option name="LAST_COMMIT_MESSAGE" value="added good and bad api response test" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

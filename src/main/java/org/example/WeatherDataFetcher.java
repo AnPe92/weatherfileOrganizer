@@ -15,32 +15,39 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class WeatherDataFetcher {
     private final CachedWeatherData cachedData;
-    private final HttpURLConnection connection;
+    private final CreateConnection createConnection;
 
-    public Optional<WeatherData> fetchWeatherData(String location) {
+    public Optional<WeatherData> fetchWeatherData(String location) throws IOException {
 
         try {
-            WeatherData weatherData = fetchData(location);
-
-            if (weatherData.getTime().isAfter(Instant.now().minusSeconds(600))) {
-                return Optional.of(weatherData);
-            } else {
-                return Optional.of(fetchData(location));
-            }
+            return checkCachedWeatherData(location);
         } catch (IOException e) {
             //returning optional so that application not just terminates
+
+            System.out.println("Error fetching :" + e.getMessage());
             return Optional.empty();
+        }
+    }
+
+    private Optional<WeatherData> checkCachedWeatherData(String location) throws IOException {
+        WeatherData cachedWeatherData = cachedData.get(location);
+        if (cachedWeatherData != null && cachedWeatherData.getTime().isAfter(Instant.now().minusSeconds(600))) {
+            return Optional.of(cachedWeatherData);
+        } else {
+            return Optional.of(fetchData(location));
         }
     }
 
 
     private WeatherData fetchData(String location) throws IOException {
+        System.out.println("ENTERING GETHCH DATA");
+
+        HttpURLConnection connection = createConnection.createConnection(location);
+
+        connection.setRequestMethod("GET");
+
+        int resCode = connection.getResponseCode();
         try {
-
-            connection.setRequestMethod("GET");
-
-            int resCode = connection.getResponseCode();
-
             if (resCode != HttpURLConnection.HTTP_OK) {
                 connection.disconnect();
                 throw new IOException("Failed to fetch data: " + resCode);
